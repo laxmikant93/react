@@ -34,7 +34,8 @@ pipeline {
                     // Copy build files to Apache document root directory on slave1
                     sh '''
                     cd myapp
-                    scp -r build/ ubuntu@18.234.64.16:/var/www/html
+                    scp -r ./build/* ubuntu@18.234.64.16:/var/www/html
+                    ssh ubuntu@18.234.64.16 sudo systemctl restart apache2
                     '''
                 }
             }
