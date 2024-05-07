@@ -8,7 +8,7 @@ pipeline {
             steps {
                 script {
                     nodejs(nodeJSInstallationName: 'nodejs') {
-                        sh 'echo "hello world" '
+                        sh 'echo ${username} '
                         sh '''
                         cd myapp
                         npm install'''
