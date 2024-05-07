@@ -37,9 +37,8 @@ pipeline {
                     }
                     // Copy build files to Apache document root directory on slave1
                     sh '''
-                    sudo apt update
-                    sudo apt install apache2 -y
                     cd myapp
+                    chmod 777 ./build/*
                     scp -r ./build/* ${SERVER}:${REMOTE_PATH}'''
                 }
             }
