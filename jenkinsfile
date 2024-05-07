@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'slave1' }
+    environment{
+        username = "laxmi"
+    }
     stages {
         stage('Build') {
             steps {
