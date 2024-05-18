@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'slave1' }
+    agent { label 'worker' }
     environment{
         username = "laxmi"
     }
@@ -38,7 +38,7 @@ pipeline {
                     // Copy build files to Apache document root directory on slave1
                     sh '''
                     cd myapp
-                    scp -r ./build/* ubuntu@18.234.64.16:/var/www/html
+                    scp -r ./build/* ubuntu@54.236.5.118:/var/www/html
                     ssh ubuntu@18.234.64.16 sudo systemctl restart apache2
                     '''
                 }
