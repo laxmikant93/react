@@ -39,7 +39,7 @@ pipeline {
                     sh '''
                     cd myapp
                     scp -r ./build/* ubuntu@54.236.5.118:/var/www/html
-                    ssh ubuntu@18.234.64.16 sudo systemctl restart apache2
+                    ssh ubuntu@54.236.5.118 sudo systemctl restart apache2
                     '''
                 }
             }
